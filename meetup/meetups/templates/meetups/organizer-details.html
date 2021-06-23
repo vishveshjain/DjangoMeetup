@@ -1,0 +1,16 @@
+{% extends 'meetups/base/base.html' %}
+{% block title %}Organizer details{% endblock title %}
+{% block main_heading %}
+<h2>Organizer details</h2>
+{% endblock main_heading %}
+{% block body %}
+<section id="confirmation">
+{% for meetup_item in meetups %}
+    <h2>{{meetup_item.organizer.orgName}}</h2>
+    <p>{{meetup_item.organizer.orgEmail}}</p>
+    <p>{{meetup_item.organizer.orgContact}}</p>
+{% endfor %}
+</section>
+{% endblock body %}
+
+
