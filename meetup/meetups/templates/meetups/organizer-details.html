@@ -1,16 +1,23 @@
 {% extends 'meetups/base/base.html' %}
+{% load static %}
 {% block title %}Organizer details{% endblock title %}
+{% block site_css %}
+<link rel="stylesheet" href="{% static 'meetups/style/meetup-details.css' %}">
+{% endblock site_css %}
+
+
 {% block main_heading %}
 <h2>Organizer details</h2>
 {% endblock main_heading %}
 {% block body %}
-<section id="confirmation">
-{% for meetup_item in meetups %}
-    <h2>{{meetup_item.organizer.orgName}}</h2>
-    <p>{{meetup_item.organizer.orgEmail}}</p>
-    <p>{{meetup_item.organizer.orgContact}}</p>
-{% endfor %}
-</section>
+<article style="background-color: rgb(149, 190, 130);"> 
+    <section id="confirmation">
+        <h3 style="color: darkblue;">Organizer Name <br></h3>
+        <p> <b> <i> {{orgName}}</i></b></p>
+        <p> <b>Organizer Email: </b> {{orgEmail}}</p>
+        <p>  <b>Organizer Phone Number: </b> {{orgContact}}</p>
+    </section>
+</article>
 {% endblock body %}
 
 
